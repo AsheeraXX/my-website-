@@ -1,30 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>My Website</title>
+  <title>My-Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .top {
+      height: 20vh;
+      border: 2px solid black;
+    }
+
+    .bottom {
+      display: flex;
+      height: 80vh;
+    }
+
+    .left {
+      width: 15%;
+      border: 2px solid black;
+    }
+
+    .middle {
+      width: 60%;
+      border: 2px solid black;
+    }
+
+    .right {
+      flex: 1;
+      border: 2px solid black;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="top">
-  <iframe src="rows.html"></iframe>
-</div>
-
-<div class="bottom">
-  <div class="left">
-    <iframe src="cols1.html"></iframe>
+  <!-- Top frame -->
+  <div class="top">
+    <iframe src="rows.html"></iframe>
   </div>
 
-  <div class="middle">
-    <iframe src="cols2.html"></iframe>
-  </div>
+  <!-- Bottom frames -->
+  <div class="bottom">
+    <div class="left">
+      <iframe src="cols1.html"></iframe>
+    </div>
 
-  <div class="right">
-    <iframe src="cols3_css.html"></iframe>
+    <div class="middle">
+      <iframe src="cols2.html"></iframe>
+    </div>
+
+    <div class="right">
+      <iframe src="cols3_css.html"></iframe>
+    </div>
   </div>
-</div>
 
 </body>
 </html>
