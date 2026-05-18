@@ -2,9 +2,87 @@
 <head>
     <title>Column 3</title>
 
+   <script>
+
+        // Images
+        var images = [
+            "yuu.jpg",
+            "ayumi.jpg",
+            "Shunsuke.jpg",
+	    "Nao.jpg",
+	    "Takajou.jpg",
+	    "yusa.jpg",
+	    "misa.jpg",
+	    "Kumagami.jpg"
+        ];
+
+        // Captions
+        var captions = [
+            "Ysuu Otosaka",
+            "Ayumi Otosaka",
+            "Shunsuke Otosaka",
+            "Nao Tomori",
+            "Jōjirō Takajō",
+            "Yusa Nishimori",
+            "Misa Kurobane",
+            "Takehito Kumagami"
+        ];
+
+        // Descriptions
+        var descriptions = [
+            "A student who has the ability to temporarily possess other people. At first, he uses his power for personal gain, but later learns to help others and protect ability users.",
+            "Yuu’s cheerful and caring younger sister who deeply supports her brother. She is kind, innocent, and always tries to keep their home warm and happy.",
+            "Yuu’s older brother who possesses the rare ability to travel through time. He works hard to protect people with supernatural abilities and carries many responsibilities.",
+            "The student council president who can make herself invisible to one person at a time. She is serious and determined, but she also deeply cares about her friends.",
+            "A loyal student council member with super speed. Although his power is difficult to control, he is dependable and always ready to help his teammates.",
+            "A gentle idol singer who has the ability to communicate with spirits. She is polite and sweet, but her personality changes completely when her sister takes over.",
+            "Yusa’s energetic older sister who appears through spirit possession. She is bold, confident, and has the ability to create flames.",
+            "A mysterious student with the ability to locate people who possess supernatural powers. He often helps the student council track down ability users and support their missions."
+        ];
+
+        // Current image number
+        var current = 1;
+
+        // Next image
+        function nextImage(){
+
+            current++;
+
+            if(current >= images.length){
+                current = 0;
+            }
+
+            changeContent();
+        }
+
+        // Previous image
+        function previousImage(){
+
+            current--;
+
+            if(current < 0){
+                current = images.length - 1;
+            }
+
+            changeContent();
+        }
+
+        // Change image, caption, and description
+        function changeContent(){
+
+            document.getElementById("slider").src = images[current];
+
+            document.getElementById("caption").innerHTML = captions[current];
+
+            document.getElementById("description").innerHTML = descriptions[current];
+        }
+
+    </script>
+
+
     <style>
         body {
-            margin: 0;
+            text-align:center;
             font-family: Times New Roman,serif;
 	    background-color: #D3D3D3;
         }
@@ -19,7 +97,7 @@
             display: block;
             margin: 0 auto;
             width: 200px;
-            height: auto;
+            height: 280px;
             border-radius: 10px;
         }
 
@@ -34,28 +112,50 @@
         }
 
         a {
-            text-decoration: underline;
+            text-decoration-style: underline;
             color: blue;
         }
+
+	    button{
+            padding:5px 10px;
+            margin:10px;
+        }
+
+        #caption{
+            margin-top:10px;
+            font-weight:bold;
+           
+        }
+
+        #description{
+            margin-top:5px;
+            margin-left:auto;
+            margin-right:auto;
 
     </style>
 </head>
 
 <body>
 
-    <h2>About the Anime</h2>
+    <h2>About the Characters</h2>
 
-    <img src="charlotte2.jpg" alt="Charlotte poster">
+    <!-- Image -->
+    <img id="slider" src="yuu.jpg">
 
-    <p>
-        Charlotte (シャーロット, Shārotto) is a Japanese anime television series directed by Yoshiyuki Asai. While P.A. Works and Aniplex are responsible for the animation, the original concept was laid down by Jun Maeda and original character design by Na-Ga, both affiliated with VisualArt's/Key. The anime began airing in Japan on July 4, 2015, and is simulcast by Crunchyroll and Animax Asia in South and Southeast Asia.
-    </p>
+    <!-- Caption -->
+    <div id="caption">Ysuu Otosaka</div>
 
-    <div class="center">
-        <a href="https://charlotte.fandom.com/wiki/Charlotte_Wiki" target="_blank">
-            Visit Fandom Website
-        </a>
+    <!-- Description -->
+    <div id="description">
+        A student who has the ability to temporarily possess other people. At first, he uses his power for personal gain, but later learns to help others and protect ability users.",
     </div>
+
+    <br>
+
+    <!-- Buttons -->
+    <button onclick="previousImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+
 
 </body>
 </html>
